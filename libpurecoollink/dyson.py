@@ -124,7 +124,7 @@ class DysonAccount:
         """Return all devices linked to the account."""
         if self._logged:
             device_response = requests.get(
-                "https://{0}/v1/provisioningservice/manifest".format(
+                "https://{0}/v2/provisioningservice/manifest".format(
                     DYSON_API_URL), headers=self._headers)
             devices = []
             for device in device_response.json():

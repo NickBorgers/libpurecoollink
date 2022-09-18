@@ -83,7 +83,7 @@ class DysonDevice:
 
         :param json_body: JSON message returned by the HTTPS API
         """
-        self._active = json_body['Active']
+        self._active = 'Active' in json_body and json_body['Active']
         self._serial = json_body['Serial']
         self._name = json_body['Name']
         self._version = json_body['Version']
